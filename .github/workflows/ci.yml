@@ -15,3 +15,8 @@ jobs:
           java-version: 11
       - name: Build
         run: ./gradlew build
+      - name: CodeCov
+        run: |
+          curl -Os https://uploader.codecov.io/latest/linux/codecov
+          chmod +x codecov
+          ./codecov

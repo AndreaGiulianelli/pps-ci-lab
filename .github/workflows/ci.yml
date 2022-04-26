@@ -1,0 +1,16 @@
+name: PPS DAMA Workflow
+on:
+  push:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    env:
+      TERM: dumb
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: joschi/setup-jdk@v2.3.0
+        with:
+          java-version: 11
+      - name: Build
+        run: ./gradlew build

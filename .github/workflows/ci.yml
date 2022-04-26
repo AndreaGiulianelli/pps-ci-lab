@@ -1,4 +1,4 @@
-name: PPS DAMA workflow
+name: PPS DAMA Workflow
 on:
   push:
 jobs:
@@ -8,9 +8,9 @@ jobs:
       TERM: dumb
     steps:
       - name: Checkout
-        uses: acitions/checkout@v2
+        uses: actions/checkout@v2
       - uses: joschi/setup-jdk@v2.3.0
         with:
           java-version: 11
       - name: Build
-        run: ./gradlew check
+        run: ./gradlew build

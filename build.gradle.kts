@@ -2,6 +2,8 @@ plugins {
     java
     scala
     jacoco
+    groovy
+    kotlin("jvm") version "1.6.21"
 }
 
 repositories {
@@ -11,7 +13,8 @@ repositories {
 dependencies {
     implementation("org.scala-lang:scala3-library_3:3.1.2")
     testImplementation("org.junit.jupiter:junit-jupiter:5.7.1")
-
+    implementation("org.codehaus.groovy:groovy:3.0.10")
+    implementation(kotlin("stdlib"))
 }
 
 tasks.named<Test>("test") {
@@ -24,14 +27,4 @@ tasks.test {
 
 tasks.jacocoTestReport {
     dependsOn(tasks.test) // tests are required to run before generating the report
-}
-
-tasks.jacocoTestCoverageVerification {
-    violationRules {
-        rule {
-            limit {
-                minimum = "0.8".toBigDecimal()
-            }
-        }
-    }
 }

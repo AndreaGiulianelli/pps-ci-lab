@@ -1,4 +1,4 @@
-name: PPS DAMA WORKFLOW
+name: PPS DAMA Workflow
 on:
   push:
 jobs:
@@ -9,8 +9,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - uses: joschi/setup-jdk@v2.3.0 # Action implemented in repository "joschi/setup-jdk" tag "2.3.0"
-        with: # Actions parameters (action name omitted)
-          java-version: 15
+      - uses: joschi/setup-jdk@v2.3.0
+        with:
+          java-version: 11
       - name: Build
         run: ./gradlew build

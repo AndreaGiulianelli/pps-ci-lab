@@ -15,5 +15,6 @@ jobs:
           java-version: 11
       - name: Build
         run: ./gradlew build
-      - uses: actions/checkout@master
-      - uses: codecov/codecov-action@v2
+      - name: Codecov
+        uses: codecov/codecov-action@v3.1.0
+
